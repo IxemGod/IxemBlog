@@ -7,3 +7,11 @@ def index(request):
     articles = Article.objects.all()
     data = {"articles" : articles}
     return render(request, "home/index.html", data)
+
+def single_article(request, slug):
+    article = Article.objects.get(slug=slug)
+    data = {'article' : article}
+    return render(request, "home/article.html", data)
+
+def add_article(request):
+    return render(request, "home/add.html")

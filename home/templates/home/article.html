@@ -1,34 +1,21 @@
-{% extends "home/base.html" %}
-{% block title%} IxemBlog {% endblock %}
+{% extends 'home/base.html' %}
+
 {% block body %}
-        <div class="bg-black mt-0 h1EtSlogan">
-            <h1 class="text-center display-4 mb-20 text-white fw-bold pt-5">Bienvenu(e) sur IxemBlog ! </h1>
-            <p class="text-center text-white display-6 pb-5">Le magazine local d'Ixem !</p>
+<div class="w-100 d-flex justify-content-center titreArticle" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEipZXoz-DBVWXE464CPc01MgYUcZzADw3Jpi-StFQ-mvRdE9MLXznMlzlg8B5WHLQCwZTY82WYrRaSZ_AIVat1Ge2nNZiiaLANG5mrCQfTLn04ohfzhUVddnlro0ZBi17YbF-USIgITNt4G/w2880-h1800-c/galaxy-stars-space-24-4k.jpg');">
+    <h1>{{article.title}}</h1>
+</div>
+
+<div class="content">
+    <div class="container">
+
+        <img src="{{article.image}}">
+        <div class="contentHtml">
+            {{article.body|safe}}
         </div>
-        <div class="content w-100 d-flex justify-content-center">
-    
-            <div class="grid text-center w-75 d-flex">
-                {% for article in articles%}
-                  <div class="g-col-6 w-50 d-flex">
-                      <img src="{{article.image}}" class="w-50">
-                      <div class="d-flex flex-column titreEtAuthor">
-                          <p class=""><a href="blog/article/{{article.slug}}">{{article.title}}</a></p>
-                          <p>Par {{article.author}} le {{article.date|date:'d F Y'}}</p>
-                      </div>
-                  </div>
-
-                {% endfor%}
-            </div>
-    
-          </div>
-
     </div>
+</div>
 
-    <a href="blog/add/">Ajouter un article</a>
-
-{% endblock%}
-</html>
-
+{% endblock %}
 
 {% block header%}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

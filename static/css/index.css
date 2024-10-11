@@ -10,4 +10,36 @@ body .h1EtSlogan h1 {
 }
 body .grid {
   margin: 0px;
+}
+body .titreEtAuthor {
+  text-align: left;
+  padding-left: 10px;
+}
+body .titreArticle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-size: cover;
+}
+body .titreArticle h1 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-size: 100%;
+  color: white;
+}
+body .content {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+body .content .container {
+  width: 60%;
+}
+body .content .container img {
+  width: 100%;
+}
+body .content .container .contentHtml {
+  margin-top: 20px;
 }/*# sourceMappingURL=index.css.map */
