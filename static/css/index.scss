@@ -9,6 +9,35 @@ body{
         }
     }
 
+    .btnRedirectAdd{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 20px;
+        .BtnRedirect_Add_Article{
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border: 2px solid black;
+            background-color: green;
+            border-radius: 10px;
+        }
+        
+
+        .BtnRedirect_Add_Name{
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border: 2px solid black;
+            background-color: rgb(128, 73, 0);
+            border-radius: 10px;
+            
+        }
+    }
+
     .grid{
         margin: 0px;
     }

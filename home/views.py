@@ -5,6 +5,7 @@ from .models import Article
 
 from .forms import ValidateAddArticle
 from .forms import NameForm
+from .forms import Search
 
 # Create your views here.
 def index(request):
@@ -54,6 +55,7 @@ def validate_add_article(request):
             author = form.cleaned_data['author']
             slug = form.cleaned_data['slug']
 
+
             Article.objects.create(title=title, body=content, author=author, image=picture, slug=slug)
 
             return HttpResponseRedirect(f"/blog/article/{slug}")
@@ -61,3 +63,16 @@ def validate_add_article(request):
             form = ValidateAddArticle()
 
         return render(request, "home/index.html", {"form": form})
+   
+def search(request):
+    if request.method == "POST":
+        form = Search(request.POST)
+
+        if form.is_valid():
+            req = form.cleaned_data['search']
+            response = Article.objects.filter(body__contains=req)
+            message = f"Voici les articles qui contient : {req}"
+            data = {"searchs" : response, "message" : message}
+            
+    return render(request, "home/index.html", data)
+    

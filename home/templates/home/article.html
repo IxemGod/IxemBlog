@@ -36,8 +36,9 @@
             <a class="nav-link" href="#">Maritime</a>
           </li>
       </ul>
-      <form class="d-flex justify-content-center me-3">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex justify-content-center me-3" method="post" action="/search">
+        {% csrf_token %}
+        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>

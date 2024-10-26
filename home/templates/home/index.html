@@ -5,11 +5,28 @@
             <h1 class="text-center display-4 mb-20 text-white fw-bold pt-5">Bienvenu(e) sur IxemBlog ! </h1>
             <p class="text-center text-white display-6 pb-5">Le magazine local d'Ixem !</p>
         </div>
+
+        <h2 style="text-align: center;">{{message}}</h2>
+        <div class="content w-100 d-flex justify-content-center">
+
+            <div class="grid text-center w-75 d-flex">
+              {% for search in searchs%}
+                <div class="w-50">
+                    <img src="{{search.image}}" class="w-50">
+                    <div class="d-flex flex-column titreEtAuthor">
+                        <p class=""><a href="blog/search/{{search.slug}}">{{search.title}}</a></p>
+                        <p>Par {{search.author}} le {{search.date|date:'d F Y'}}</p>
+                    </div>
+                </div>
+
+              {% endfor%}
+          </div>
+        </div>
         <div class="content w-100 d-flex justify-content-center">
     
             <div class="grid text-center w-75 d-flex">
                 {% for article in articles%}
-                  <div class="g-col-6 w-50 d-flex">
+                  <div class="w-50">
                       <img src="{{article.image}}" class="w-50">
                       <div class="d-flex flex-column titreEtAuthor">
                           <p class=""><a href="blog/article/{{article.slug}}">{{article.title}}</a></p>
@@ -24,8 +41,10 @@
 
     </div>
 
-    <a href="/blog/add/">Ajouter un article</a><br>
-    <a href="/blog/name/">Ajoute ton prénom lol</a>
+    <div class="btnRedirectAdd">
+      <a href="/blog/add/" class="BtnRedirect_Add_Article">Ajouter un article</a><br>
+      <a href="/blog/name/" class="BtnRedirect_Add_Name">Ajoute ton prénom</a>
+    </div>
 
 {% endblock%}
 </html>
@@ -50,8 +69,9 @@
             <a class="nav-link" href="#">Maritime</a>
           </li>
       </ul>
-      <form class="d-flex justify-content-center me-3">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex justify-content-center me-3" method="post" action="/search">
+        {% csrf_token %}
+        <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>

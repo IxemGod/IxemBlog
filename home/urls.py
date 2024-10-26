@@ -9,4 +9,5 @@ urlpatterns = [
     path("blog/name/", views.name, name="name"),
     path("blog/your-name", views.get_name, name="get_name"),
     path("add/validate", views.validate_add_article, name="validate_add_article"),
+    path("search", views.search, name="search"),
 ]
