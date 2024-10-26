@@ -51,4 +51,38 @@ body{
             }
         }
     }
+
+
+    .ajoutarticle{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .containerAjoutArticle{
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            
+            form{
+                display: flex;
+                flex-direction: column;
+
+                label{
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                textarea{
+                height: 100px;
+                }
+
+                button{
+                    margin-top: 10px;
+                }
+
+            }
+        }
+    }
 }

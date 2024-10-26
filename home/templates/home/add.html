@@ -31,8 +31,29 @@
 
 <div class="ajoutarticle">
     <div class="containerAjoutArticle">
-        
+        <form action="/blog/add/validate" method="post">{% csrf_token %}
+            <label>Titre
+                <input type="text" name="title" id="title" required>
+            </label>
+
+            <label>Image
+                <input type="text" name="picture" id="picture" required>
+            </label>
+
+            <label>Article
+                <textarea name="content" required></textarea>
+            </label>
+
+            <label>Auteur
+                <input type="text" name="author" required>
+            </label>
+
+            <label>Slug
+                <input type="text" name="slug" required>
+            </label>
+            <button>Ajouter l'article</button>
+        </form>
     </div>
 </div>
 
-{%endblock%}
+{%endblock%} 

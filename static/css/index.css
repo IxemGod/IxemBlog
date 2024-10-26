@@ -42,4 +42,30 @@ body .content .container img {
 }
 body .content .container .contentHtml {
   margin-top: 20px;
+}
+body .ajoutarticle {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .ajoutarticle .containerAjoutArticle {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+body .ajoutarticle .containerAjoutArticle form {
+  display: flex;
+  flex-direction: column;
+}
+body .ajoutarticle .containerAjoutArticle form label {
+  display: flex;
+  flex-direction: column;
+}
+body .ajoutarticle .containerAjoutArticle form textarea {
+  height: 100px;
+}
+body .ajoutarticle .containerAjoutArticle form button {
+  margin-top: 10px;
 }/*# sourceMappingURL=index.css.map */
